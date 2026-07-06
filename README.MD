@@ -2,7 +2,7 @@
 
 This project adds a display component for the IKEA OBEGRÄNSAD to ESPHome.
 
-This reimplementation aims to provide a simpler and faster alternative to <https://github.com/sascha-hemi/esphome-ikea-led-matrix> without any external dependencies. It's output mechanism is based on the [ikea-led-obegraensad Project by ph1p](https://github.com/ph1p/ikea-led-obegraensad), which utilizes [SPI](https://github.com/ph1p/ikea-led-obegraensad/blob/2ea603c390050e167fd90387da6b4bd4afbe7687/src/screen.cpp#L252) over a bit banging approach.
+This reimplementation aims to provide a simpler and faster alternative to <https://github.com/sascha-hemi/esphome-ikea-led-matrix> without any external dependencies. It's output mechanism is based on the [ikea-led-obegraensad Project by ph1p](https://github.com/ph1p/ikea-led-obegraensad), which utilizes [SPI](https://github.com/ph1p/ikea-led-obegraensad/blob/2ea603c390050e167fd90387da6b4bd4afbe7687/src/screen.cpp#L252) over a bit banging approach. This results in less CPU overhead and should improve the overall reliability.
 
 ## Wiring
 
@@ -38,7 +38,7 @@ esphome:
   friendly_name: IKEA OBEGRÄNSAD
 
 external_components:
-  - source: github://janwiesemann/esphome-ikea-obegransad@master
+  - source: github://janwiesemann/esphome-ikea-obegransad@main
     components: [ ikea_obegraensad ]
 
 light:
