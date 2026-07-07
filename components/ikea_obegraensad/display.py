@@ -2,7 +2,7 @@ from esphome import pins
 import esphome.codegen as cg
 from esphome.components import display, spi
 import esphome.config_validation as cv
-from esphome.const import CONF_ID, CONF_LAMBDA, CONF_PAGES
+from esphome.const import CONF_ID, CONF_LAMBDA
 
 DEPENDENCIES = ["spi"]
 
@@ -19,8 +19,7 @@ CONFIG_SCHEMA = cv.All(
         }
     )
     .extend(cv.polling_component_schema("200ms"))
-    .extend(spi.spi_device_schema(cs_pin_required=False)),
-    cv.has_at_most_one_key(CONF_PAGES, CONF_LAMBDA),
+    .extend(spi.spi_device_schema(cs_pin_required=False))
 )
 
 
