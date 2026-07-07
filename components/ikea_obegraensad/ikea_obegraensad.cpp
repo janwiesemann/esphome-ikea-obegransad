@@ -29,6 +29,9 @@ void Panel::dump_config() {
 }
 
 void HOT Panel::draw_pixel_at(int x, int y, Color color) {
+  if (!this->get_clipping().inside(x, y))
+    return;
+
   Panel::translate_coordinate_rotation(x, y);
   auto[byte_index, bit_index] = Panel::translate_coordinate_to_byte_and_bit(x, y);
 
